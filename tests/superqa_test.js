@@ -31,7 +31,7 @@ module.exports = {
       .click(".login")
       .end()
   },
-  
+
   "Verify 'Registration' modal" : function (browser) {
     browser
       .url("https://superqa.herokuapp.com/")
@@ -39,5 +39,36 @@ module.exports = {
       .verify.elementPresent(".registrationForm")
       .click(".register")
       .end()
+  },
+
+  "Verify \"login\"" : function (browser) {
+    browser
+      .url("https://superqa.herokuapp.com/")
+      .waitForElementVisible('body', 1000)
+      .click('.login')
+      .pause(1000)
+      .setValue('input[name=email]', 'wasietest1@gmail.com')
+      .setValue('input[type=password]', 'password')
+      .pause(1000)
+      .click(".button")
+      .pause(1000)
+      .verify.containsText(".menuContainer", "Accounts")
+  },
+
+  "Verify \"register\"" : function (browser) {
+    browser
+      .url("https://superqa.herokuapp.com/")
+      .waitForElementVisible('body', 1000)
+      .click('.register')
+      .pause(1000)
+      .setValue('input[type=email]', 'wasie1@gmail.com')
+      .setValue('input[name=fullname]', 'w1')
+      .setValue(".registrationForm input:nth-child(3)", 'password')
+      .setValue(".registrationForm input:nth-child(4)", 'password')
+      .click("input[value=register]")
+      .end();
+
+
+
   }
 };
