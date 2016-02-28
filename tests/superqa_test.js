@@ -1,5 +1,5 @@
 module.exports = {
-/*"Verify 'About us' tab" : function (browser) {
+"Verify 'About us' tab" : function (browser) {
     browser
       .url("https://superqa.herokuapp.com/")
       .click(".aboutus-tab")
@@ -67,7 +67,7 @@ module.exports = {
       .click("input[value=Register]")
       .end();
 
-  },*/
+  },
   "Verify \"accounts\"" : function (browser) {
     browser
       .url("https://superqa.herokuapp.com/")
